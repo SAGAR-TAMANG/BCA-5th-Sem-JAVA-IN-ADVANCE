@@ -1,28 +1,41 @@
-class Person {
+interface CanBark {
+  void Speak();
+}
+
+interface CanMeow {
+  void Speak();
+}
+
+class Dog implements CanBark {
   String name;
+  
+  Dog(String n) {
+    name = n;
+  }
 
-  void display() {
-      System.out.println("Name: " + name);
+  public void Speak() {
+    System.out.println(name + " Barks");
   }
 }
 
-class Student extends Person {
-  int id;
-
-  Student(String namee, int id) {
-      this.name = namee;
-      this.id = id;
+class Cat implements CanMeow {
+  String name;
+  
+  Cat(String n) {
+    name = n;
   }
 
-  void display() {
-      super.display();
-      System.out.println("ID: " + id);
+  public void Speak() {
+    System.out.println(name + " Meows");
   }
 }
 
-public class Program1 {
+class Program1 {
   public static void main(String[] args) {
-      Student student = new Student("Alice", 101);
-      student.display();
+    Dog obj1 = new Dog("German Shephard");
+    Cat obj2 = new Cat("Billi");
+
+    obj1.Speak();
+    obj2.Speak();
   }
 }
