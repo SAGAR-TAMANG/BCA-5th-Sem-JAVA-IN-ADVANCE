@@ -1,27 +1,28 @@
-class Animal {
-  void Speak() {
-    System.out.println("");
+class Person {
+  String name;
+
+  void display() {
+      System.out.println("Name: " + name);
   }
 }
 
-class Dog extends Animal{
-  void Speak() {
-    System.out.println("Bark");
+class Student extends Person {
+  int id;
+
+  Student(String namee, int id) {
+      this.name = namee;
+      this.id = id;
+  }
+
+  void display() {
+      super.display();
+      System.out.println("ID: " + id);
   }
 }
 
-class Cat extends Animal{
-  void Speak() {
-    System.out.println("Meow");
-  }
-}
-
-class Program1 {
+public class Program1 {
   public static void main(String[] args) {
-    Dog obj = new Dog();
-    Cat obj1 = new Cat();
-
-    obj.Speak();
-    obj1.Speak();
+      Student student = new Student("Alice", 101);
+      student.display();
   }
 }
