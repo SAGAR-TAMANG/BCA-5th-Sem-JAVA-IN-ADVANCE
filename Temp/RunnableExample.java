@@ -1,6 +1,6 @@
 public class RunnableExample implements Runnable {
   public void run() {
-      for (int i = 1; i <= 5; i++) {
+      for (int i = 1; i <= 3; i++) {
           System.out.println(Thread.currentThread().getName() + " Running step " + i);
           try {
             Thread.sleep(500);
